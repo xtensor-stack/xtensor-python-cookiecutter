@@ -1,8 +1,8 @@
+#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+#include "numpy/arrayobject.h"
 #include "pybind11/pybind11.h"
-
 #include "xtensor/xmath.hpp"
 #include "xtensor/xarray.hpp"
-
 #include "xtensor-python/pyarray.hpp"
 #include "xtensor-python/pyvectorize.hpp"
 
@@ -43,6 +43,11 @@ inline double scalar_func(double i, double j)
 
 PYBIND11_PLUGIN({{ cookiecutter.python_package_name }})
 {
+    if(_import_array() < 0)
+    {
+        PyErr_SetString(PyExc_ImportError, "numpy.core.multiarray failed to import");
+        return nullptr;
+    }
 
     py::module m("{{ cookiecutter.python_package_name }}", R"docu(
         {{ cookiecutter.project_short_description }}
