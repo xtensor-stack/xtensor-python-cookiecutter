@@ -22,6 +22,21 @@ class get_pybind_include(object):
         return pybind11.get_include(self.user)
 
 
+class get_numpy_include(object):
+    """Helper class to determine the numpy include path
+
+    The purpose of this class is to postpone importing numpy
+    until it is actually installed, so that the ``get_include()``
+    method can be invoked. """
+
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        import numpy as np
+        return np.get_include()
+
+
 ext_modules = [
     Extension(
         '{{ cookiecutter.python_package_name }}',
@@ -30,6 +45,7 @@ ext_modules = [
             # Path to pybind11 headers
             get_pybind_include(),
             get_pybind_include(user=True),
+            get_numpy_include(),
             os.path.join(sys.prefix, 'include')
         ],
         language='c++'
