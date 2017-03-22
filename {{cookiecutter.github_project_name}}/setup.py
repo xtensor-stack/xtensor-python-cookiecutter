@@ -94,7 +94,7 @@ setup(
     description= '{{ cookiecutter.project_short_description }}',
     long_description='',
     ext_modules=ext_modules,
-    install_requires=['pybind11>=1.8.1'],
+    install_requires=['pybind11>=2.0.1', 'numpy'],
     cmdclass={'build_ext': BuildExt},
     zip_safe=False,
 )
