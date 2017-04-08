@@ -42,8 +42,8 @@ information:
   
 This will produce a directory containing all the required content for a minimal extension
 project making use of xtensor with all the required boilerplate for package management,
-together with a few basic examples.
-
+together with a few basic examples. The generated Python extension requires an installation
+of  `xtensor` `^0.8.1`, `xtensor-python` `^0.9.0`, `numpy`, and `pybind11` `^2.1.0`.
 
 Install the module:
 
