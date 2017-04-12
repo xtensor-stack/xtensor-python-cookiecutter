@@ -46,7 +46,8 @@ ext_modules = [
             get_pybind_include(),
             get_pybind_include(user=True),
             get_numpy_include(),
-            os.path.join(sys.prefix, 'include')
+            os.path.join(sys.prefix, 'include'),
+            os.path.join(sys.prefix, 'Library', 'include')
         ],
         language='c++'
     ),
