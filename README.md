@@ -1,6 +1,8 @@
 ![cookicutter-logo](./cookiecutter.png)
 
+[![Travis](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter.svg?branch=master)](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter)
 [![Documentation Status](https://readthedocs.org/projects/xtensor/badge/?version=latest)](https://xtensor.readthedocs.io/en/latest/?badge=latest)
+[![Join the Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/QuantStack/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 #### A [cookicutter](https://github.com/audreyr/cookiecutter) template for creating a custom Python extension with xtensor
 
@@ -50,7 +52,7 @@ Install the module:
     $ pip install ./{{ cookiecutter.github_project_name }}/
 
 
-If you have [Jupyter](jupyter.org), run the [Test_Run notebook](http://nbviewer.jupyter.org/github/QuantStack/xtensor-cookiecutter/blob/master/Test_Run.ipynb):
+If you have [Jupyter](jupyter.org) installed, run the [Test_Run notebook](http://nbviewer.jupyter.org/github/QuantStack/xtensor-cookiecutter/blob/master/Test_Run.ipynb):
 
     $ cd {{ cookiecutter.github_project_name }}
     $ jupyter notebook
@@ -61,10 +63,8 @@ Otherwise just run the test script:
     $ python Test_Run.py
 
 
-
-## More information
+## Resources
 
 - [Documentation of xtensor](https://xtensor.readthedocs.io/en/latest/)
-- If you find an issue with xtensor-cookiecutter or would like to contribute an
-  enhancement, [file an issue](https://github.com/QuantStack/xtensor-cookiecutter/issues/new)
-  at the xtensor-cookiecutter GitHub repository
+- [Documentation of xtensor-python](https://xtensor-pyhton.readthedocs.io/en/latest/)
+- [Documentation of xtensor-julia](https://xtensor-julia.readthedocs.io/en/latest/)
