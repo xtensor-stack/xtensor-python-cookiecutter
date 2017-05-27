@@ -1,0 +1,117 @@
+language: cpp
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-4.9
+      env: COMPILER=gcc GCC=4.9 PY=3
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env: COMPILER=gcc GCC=5 PY=3
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env: COMPILER=gcc GCC=5 PY=2
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.6
+          packages:
+            - clang-3.6
+      env: COMPILER=clang CLANG=3.6 PY=3
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.7
+          packages:
+            - clang-3.7
+      env: COMPILER=clang CLANG=3.7 PY=3
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.8
+          packages:
+            - clang-3.8
+      env: COMPILER=clang CLANG=3.8 PY=3
+    - os: osx
+      osx_image: xcode8
+      compiler: clang
+      env: PY=3
+env:
+  global:
+    - MINCONDA_VERSION="latest"
+    - MINCONDA_LINUX="Linux-x86_64"
+    - MINCONDA_OSX="MacOSX-x86_64"
+before_install:
+    - |
+      # Configure build variables
+      if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+        if [[ "$COMPILER" == "gcc" ]]; then
+          export CXX=g++-$GCC CC=gcc-$GCC;
+        fi
+        if [[ "$COMPILER" == "clang" ]]; then
+          export CXX=clang++-$CLANG CC=clang-$CLANG;
+        fi
+      elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+        export CXX=clang++ CC=clang PYTHONHOME=$HOME/miniconda;
+      fi
+    
+install:
+    # Download and update miniconda
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+        MINCONDA_OS=$MINCONDA_LINUX;
+      elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+        MINCONDA_OS=$MINCONDA_OSX;
+      fi
+    - if [[ "$PY" == "3" ]]; then
+          wget "http://repo.continuum.io/miniconda/Miniconda3-$MINCONDA_VERSION-$MINCONDA_OS.sh" -O miniconda.sh;
+      else
+          wget "http://repo.continuum.io/miniconda/Miniconda2-$MINCONDA_VERSION-$MINCONDA_OS.sh" -O miniconda.sh;
+      fi
+    - bash miniconda.sh -b -p $HOME/miniconda
+    - export PATH="$HOME/miniconda/bin:$PATH"
+    - hash -r
+    - conda config --set always_yes yes --set changeps1 no
+    - conda clean --packages
+    - conda update -q conda
+    - conda info -a
+    # Install xtensor-python
+    - conda install xtensor-python -c conda-forge
+    # Install cookiecutter and pytest
+    - conda install pytest cookiecutter -c conda-forge
+    # Run cookiecutter in build directory
+    - mkdir build
+    - cd build
+    - cookiecutter $TRAVIS_BUILD_DIR --no-input
+         # Defaults to
+         # "author_name": "",
+         # "author_email": "",
+         # "github_project_name": "xtensor-example-extension",
+         # "github_organization_name": "QuantStack",
+         # "python_package_name": "xtensor_example_extension",
+         # "cpp_namespace": "ext",
+         # "project_short_description": "An example xtensor extension"
+    - pip install ./xtensor-example-extension
+
+script:
+    - py.test -s
+
