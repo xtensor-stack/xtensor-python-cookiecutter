@@ -7,9 +7,9 @@
 
 #### A [cookicutter](https://github.com/audreyr/cookiecutter) template for creating a custom Python extension with xtensor
 
-## What is xtensor-cookiecutter?
+## What is xtensor-python-cookiecutter?
 
-`xtensor-cookiecutter` helps extension authors create Python extension modules making use of xtensor.
+`xtensor-python-cookiecutter` helps extension authors create Python extension modules making use of xtensor.
 
 It takes care of the initial work of generating a project skeleton with
 
@@ -27,11 +27,11 @@ Install [cookiecutter](https://github.com/audreyr/cookiecutter):
 
     $ pip install cookiecutter
 
-After installing cookiecutter, use the xtensor-cookiecutter:
+After installing cookiecutter, use the xtensor-python-cookiecutter:
 
-    $ cookiecutter https://github.com/QuantStack/xtensor-cookiecutter.git
+    $ cookiecutter https://github.com/QuantStack/xtensor-python-cookiecutter.git
 
-As xtensor-cookiecutter runs, you will be asked for basic information about
+As xtensor-python-cookiecutter runs, you will be asked for basic information about
 your custom extension project. You will be prompted for the following
 information:
 
@@ -46,23 +46,17 @@ information:
 This will produce a directory containing all the required content for a minimal extension
 project making use of xtensor with all the required boilerplate for package management,
 together with a few basic examples. The generated Python extension requires an installation
-of  `xtensor` `^0.8.1`, `xtensor-python` `^0.9.0`, `numpy`, and `pybind11` `^2.1.0`.
+of  `xtensor` `^0.10.2`, `xtensor-python` `^0.12.1`, `numpy`, and `pybind11` `^2.1.0`.
 
 Install the module:
 
     $ pip install ./{{ cookiecutter.github_project_name }}/
 
 
-If you have [Jupyter](jupyter.org) installed, run the [Test_Run notebook](http://nbviewer.jupyter.org/github/QuantStack/xtensor-cookiecutter/blob/master/Test_Run.ipynb):
+If you have [Jupyter](jupyter.org) installed, run the [Test_Run notebook](http://nbviewer.jupyter.org/github/QuantStack/xtensor-python-cookiecutter/blob/master/Test_Run.ipynb):
 
     $ cd {{ cookiecutter.github_project_name }}
     $ jupyter notebook
-
-Otherwise just run the test script:
-
-    $ cd {{ cookiecutter.github_project_name }}
-    $ python Test_Run.py
-
 
 ## Resources
 

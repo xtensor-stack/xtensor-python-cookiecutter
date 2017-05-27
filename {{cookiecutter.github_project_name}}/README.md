@@ -19,7 +19,7 @@ Installation
      - `pip install ./{{ cookiecutter.github_project_name }}`
  - For earlier versions of Python, including Python 2.7:
 
-   xtensor requires a C++11 compliant compiler (i.e. Visual Studio 2015 on
+   xtensor requires a C++14 compliant compiler (i.e. Visual Studio 2015 on
    Windows). Running a regular `pip install` command will detect the version
    of the compiler used to build Python and attempt to build the extension
    with it. We must force the use of Visual Studio 2015.
