@@ -1,6 +1,7 @@
 ![cookicutter-logo](./cookiecutter.png)
 
 [![Travis](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter.svg?branch=master)](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter)
+[![Appveyor](https://ci.appveyor.com/api/projects/status/ek0yq62h61r1pwbj?svg=true)](https://ci.appveyor.com/project/QuantStack/xtensor-python-cookiecutter)
 [![Documentation Status](https://readthedocs.org/projects/xtensor/badge/?version=latest)](https://xtensor.readthedocs.io/en/latest/?badge=latest)
 [![Join the Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/QuantStack/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
