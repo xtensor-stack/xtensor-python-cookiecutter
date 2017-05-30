@@ -3,10 +3,6 @@
 dist/
 build/
 *.py[cod]
-node_modules/
-
-# Compiled javascript
-{{ cookiecutter.python_package_name }}/static/
 
 # OS X
 .DS_Store
