@@ -1,4 +1,4 @@
-![cookicutter-logo](./cookiecutter.png)
+# ![xtensor-cookiecutter](http://quantstack.net/assets/images/xtensor-cookiecutter.svg)
 
 [![Travis](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter.svg?branch=master)](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter)
 [![Appveyor](https://ci.appveyor.com/api/projects/status/ek0yq62h61r1pwbj?svg=true)](https://ci.appveyor.com/project/QuantStack/xtensor-python-cookiecutter)
