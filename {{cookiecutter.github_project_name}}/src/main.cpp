@@ -30,7 +30,7 @@ inline xt::pyarray<double> example2(xt::pyarray<double> &m)
 inline double readme_example1(xt::pyarray<double> &m)
 {
     auto sines = xt::sin(m);
-    return std::accumulate(sines.begin(), sines.end(), 0.0);
+    return std::accumulate(sines.cbegin(), sines.cend(), 0.0);
 }
 
 // Vectorize Examples
