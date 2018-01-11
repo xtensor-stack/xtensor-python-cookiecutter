@@ -42,11 +42,11 @@ inline double scalar_func(double i, double j)
 
 // Python Module and Docstrings
 
-PYBIND11_PLUGIN({{ cookiecutter.python_package_name }})
+PYBIND11_MODULE({{ cookiecutter.python_package_name }}, m)
 {
     xt::import_numpy();
 
-    py::module m("{{ cookiecutter.python_package_name }}", R"docu(
+    m.doc() = R"pbdoc(
         {{ cookiecutter.project_short_description }}
 
         .. currentmodule:: {{ cookiecutter.python_package_name }}
@@ -58,7 +58,7 @@ PYBIND11_PLUGIN({{ cookiecutter.python_package_name }})
            example2
            readme_example1
            vectorize_example1
-    )docu");
+    )pbdoc";
 
     m.def("example1", example1, "Return the first element of an array, of dimension at least one");
     m.def("example2", example2, "Return the the specified array plus 2");
@@ -66,6 +66,4 @@ PYBIND11_PLUGIN({{ cookiecutter.python_package_name }})
     m.def("readme_example1", readme_example1, "Accumulate the sines of all the values of the specified array");
 
     m.def("vectorize_example1", xt::pyvectorize(scalar_func), "Add the sine and and cosine of the two specified values");
-
-    return m.ptr();
 }
