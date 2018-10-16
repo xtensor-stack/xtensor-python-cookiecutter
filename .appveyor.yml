@@ -24,7 +24,7 @@ install:
   - conda info -a
   - "set PYTHONHOME=%MINICONDA%"
   # Install xtensor-python
-  - conda install xtensor-python -c conda-forge
+  - conda install xtensor-python -c QuantStack -c conda-forge
   # Install cookiecutter and pytest
   - conda install pytest cookiecutter -c conda-forge
   # Run cookiecutter in build directory
