@@ -87,7 +87,7 @@ install:
     - conda update -q conda
     - conda info -a
     # Install xtensor-python
-    - conda install xtensor-python -c QuantStack -c conda-forge
+    - conda install xtensor-python=0.23.0 -c conda-forge
     # Install cookiecutter and pytest
     - conda install pytest cookiecutter -c conda-forge
     # Run cookiecutter in build directory
