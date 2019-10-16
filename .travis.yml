@@ -84,6 +84,9 @@ install:
     - hash -r
     - conda config --set always_yes yes --set changeps1 no
     - conda clean --packages
+    # The 2 following lines are a workaround to https://github.com/conda/conda/issues/9337
+    - pip uninstall -y setuptools
+    - conda install setuptools
     - conda update -q conda
     - conda info -a
     # Install xtensor-python
