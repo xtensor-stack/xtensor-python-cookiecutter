@@ -1,7 +1,7 @@
 # ![xtensor-cookiecutter](xtensor-cookiecutter.svg)
 
-[![Travis](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter.svg?branch=master)](https://travis-ci.org/QuantStack/xtensor-python-cookiecutter)
-[![Appveyor](https://ci.appveyor.com/api/projects/status/ek0yq62h61r1pwbj?svg=true)](https://ci.appveyor.com/project/QuantStack/xtensor-python-cookiecutter)
+[![Travis](https://travis-ci.org/xtensor-stack/xtensor-python-cookiecutter.svg?branch=master)](https://travis-ci.org/xtensor-stack/xtensor-python-cookiecutter)
+[![Appveyor](https://ci.appveyor.com/api/projects/status/jpplisnhk808l8c8?svg=true)](https://ci.appveyor.com/project/xtensor-stack/xtensor-python-cookiecutter)
 [![Documentation Status](https://readthedocs.org/projects/xtensor/badge/?version=latest)](https://xtensor.readthedocs.io/en/latest/?badge=latest)
 [![Join the Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/QuantStack/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -29,7 +29,7 @@ Install [cookiecutter](https://github.com/audreyr/cookiecutter):
 
 After installing cookiecutter, use the xtensor-python-cookiecutter:
 
-    $ cookiecutter https://github.com/QuantStack/xtensor-python-cookiecutter.git
+    $ cookiecutter https://github.com/xtensor-stack/xtensor-python-cookiecutter.git
 
 As xtensor-python-cookiecutter runs, you will be asked for basic information about
 your custom extension project. You will be prompted for the following
@@ -53,7 +53,7 @@ Install the module:
     $ pip install ./{{ cookiecutter.github_project_name }}/
 
 
-If you have [Jupyter](jupyter.org) installed, run the [Test_Run notebook](http://nbviewer.jupyter.org/github/QuantStack/xtensor-python-cookiecutter/blob/master/Test_Run.ipynb):
+If you have [Jupyter](jupyter.org) installed, run the [Test_Run notebook](http://nbviewer.jupyter.org/github/xtensor-stack/xtensor-python-cookiecutter/blob/master/Test_Run.ipynb):
 
     $ cd {{ cookiecutter.github_project_name }}
     $ jupyter notebook
